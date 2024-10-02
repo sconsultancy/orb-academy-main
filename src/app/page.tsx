@@ -31,12 +31,12 @@ export default function Home() {
           </div>
 
           <img
-            src="/assets/home/hero_boy.PNG"
+            src="assets/home/hero_boy.png"
             alt=""
             className=" absolute -bottom-24 right-28"
           />
           <img
-            src="/assets/home/hero_cat.png"
+            src="assets/home/hero_cat.png"
             alt=""
             className=" absolute -bottom-24 -right-20"
           />
