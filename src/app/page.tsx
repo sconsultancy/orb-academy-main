@@ -56,32 +56,32 @@ export default function Home() {
           </div>
           <div className=" relative flex  items-end">
             <img
-              src="/assets/home/dashboard/dna.png"
+              src="assets/home/dashboard/dna.png"
               alt=""
               className="absolute top-0 left-16 "
             />
             <img
-              src="/assets/home/dashboard/earth.png"
+              src="assets/home/dashboard/earth.png"
               alt=""
               className="absolute  top-16 left-0 "
             />
             <img
-              src="/assets/home/dashboard/satelite_small.png"
+              src="assets/home/dashboard/satelite_small.png"
               alt=""
               className="absolute bottom-14 -left-3 "
             />
             <img
-              src="/assets/home/dashboard/satelite.png"
+              src="assets/home/dashboard/satelite.png"
               alt=""
               className="absolute  top-8 right-8"
             />
             <img
-              src="/assets/home/dashboard/setting.png"
+              src="assets/home/dashboard/setting.png"
               alt=""
               className="absolute  bottom-20 -left-2"
             />
             <img
-              src="/assets/home/dashboard/stu_boy.png"
+              src="assets/home/dashboard/stu_boy.png"
               alt=""
               className="  z-10"
             />
@@ -99,7 +99,7 @@ export default function Home() {
           </div>
 
           <img
-            src="/assets/home/dashboard/teacher.png"
+            src="assets/home/dashboard/teacher.png"
             alt=""
             className="absolute bottom-12 right-3"
           />
