@@ -13,7 +13,7 @@ export default function Home() {
         <div className="flex flex-col max-w-md  space-y-1 my-10  items-center py-5  ">
           <h1 className=" text-2xl font-semibold">Book your Free Class</h1>
           <p className=" font-semibold text-gray-500 ">
-            Learn from India's Best Teachers
+            Learn from India &apos; s Best Teachers
           </p>
           <h2 className=" text-xl font-semibold ">Enter Your Details</h2>
           <HeroForm></HeroForm>
