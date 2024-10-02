@@ -232,7 +232,7 @@ function Hero_Dropdown() {
       return data.toLowerCase().startsWith(searchedValue);
     });
     // let gem = arr ? "yes" : "no";
-    let temp = arr.map((e) => "hii").join("");
+    let temp = arr.map(() => "hii").join("");
     if (temp) {
       setFilteredCountry(arr);
     } else {

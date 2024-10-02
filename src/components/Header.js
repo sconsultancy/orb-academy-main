@@ -9,30 +9,9 @@ function Header() {
     document.querySelector("body").style.overflowX = "hidden";
   }, []);
 
-  const linkList = [
-    { title: "Home", link: "/home" },
-    {
-      title: "Classes",
-      link: "/classes",
-    },
-    {
-      title: "Resources",
-      link: "/resources",
-    },
-    {
-      title: "Support",
-      link: "/support",
-    },
-    {
-      title: "Contact",
-      link: "/contact_us",
-    },
-  ];
-
   const handleBurgerClick = (e) => {
     e.preventDefault();
     setBurger(!burger);
-    const burgLinks = document.querySelectorAll(".burgLink");
   };
 
   console.log(burger);
