@@ -47,7 +47,7 @@ function SignupForm() {
   const clearForm = () => {
     const input_list = ["name", "number", "email", "password"];
 
-    input_list.forEach((e, i) => {
+    input_list.forEach((e) => {
       const label = document.getElementById(`signup_label_${e}`);
       const input = document.getElementById(`signup_form_${e}`);
       label.style.transform = "translateY(0px)";
@@ -61,7 +61,7 @@ function SignupForm() {
     });
   };
 
-  const handleGoogleSignUp = async (e) => {
+  const handleGoogleSignUp = async () => {
     axios.get("http://localhost:8000/auth/google");
   };
 
