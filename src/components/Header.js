@@ -84,7 +84,7 @@ function Header() {
       <div
         className={`absolute top-[15vh]  ${isOpen ? "absolute" : "hidden"}  `}
       >
-        {isSignup ? <SignupForm /> : <LoginForm />}
+        {isSignup ? <SignupForm /> : <LoginForm setIsOpen={setIsOpen} />}
       </div>
 
       {/* Burger Nav */}

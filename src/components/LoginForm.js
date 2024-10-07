@@ -1,11 +1,29 @@
 "use client";
 
 import axios from "axios";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLoginMutation } from "../slices/usersApiSlice";
+import { setCredentials } from "@/slices/authSlice";
+import { toast, Toaster } from "sonner";
 
-function LoginForm(props) {
+function LoginForm({ setIsOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const [login, { isLoading }] = useLoginMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      router.push("/");
+    }
+  }, [userInfo, router]);
 
   const handleFocusInput = (e) => {
     const labels = document.getElementsByTagName("label");
@@ -47,9 +65,24 @@ function LoginForm(props) {
     });
   };
 
-  const handleSubmitClick = (e) => {
+  const handleSubmitClick = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+
+    try {
+      const res = await login({ email, password });
+      // console.log(res);
+      if (res.error) {
+        toast.error(res.error.data.message);
+      } else {
+        // console.log(res.cookie);
+        router.push("/");
+        setIsOpen(false);
+        dispatch(setCredentials({ ...res }));
+      }
+    } catch (err) {
+      console.log(err?.data?.message || err.error);
+    }
+
     clearForm();
   };
 

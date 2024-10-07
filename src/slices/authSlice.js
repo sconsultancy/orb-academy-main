@@ -1,12 +1,18 @@
-"use client";
 import { createSlice } from "@reduxjs/toolkit";
-import { create } from "domain";
 
-const initialState = {
-  userInfo: localStorage.getItem("userInfo")
-    ? JSON.parse(localStorage.getItem("userInfo"))
-    : null,
-};
+var initialState;
+
+try {
+  initialState = {
+    userInfo: localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
+      : null,
+  };
+
+  console.log(initialState);
+} catch (err) {
+  console.log(err);
+}
 
 const authSlice = createSlice({
   name: "auth",
