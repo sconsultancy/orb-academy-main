@@ -3,7 +3,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-function SignupForm(props) {
+function SignupForm() {
   // State for each input Element
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");

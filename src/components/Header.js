@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Modal from "@/components/Modal";
 import LoginForm from "@/components/LoginForm";
 import SignupForm from "@/components/SignupForm";
 
@@ -20,11 +19,11 @@ function Header() {
     setBurger(!burger);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = () => {
     setIsOpen(true);
     setIsSignup(false);
   };
-  const handleSignup = (e) => {
+  const handleSignup = () => {
     setIsOpen(true);
     setIsSignup(true);
   };
@@ -76,7 +75,7 @@ function Header() {
 
       {/* Login Signup Modal */}
       <div
-        onClick={(e) => setIsOpen(false)}
+        onClick={() => setIsOpen(false)}
         className={` ${
           isOpen ? "absolute" : "hidden"
         }   top-[99px] h-screen w-screen  `}

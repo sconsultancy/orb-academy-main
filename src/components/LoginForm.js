@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "@/slices/authSlice";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 
 function LoginForm({ setIsOpen }) {
   const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ function LoginForm({ setIsOpen }) {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const [login, { isLoading }] = useLoginMutation();
+  const [login] = useLoginMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -53,7 +53,7 @@ function LoginForm({ setIsOpen }) {
   const clearForm = () => {
     const input_list = ["email", "password"];
 
-    input_list.forEach((e, i) => {
+    input_list.forEach((e) => {
       const label = document.getElementById(`login_label_${e}`);
       const input = document.getElementById(`login_form_${e}`);
       label.style.transform = "translateY(0px)";
@@ -89,7 +89,7 @@ function LoginForm({ setIsOpen }) {
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
 
-    const response = await axios.get("/api/login", { withCredentials: true });
+    // const response = await axios.get("/api/login", { withCredentials: true });
   };
   return (
     <div className=" bg-white p-10 border">
