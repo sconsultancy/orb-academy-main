@@ -32,11 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider store={store}>
-          <Toaster position="top-center" richColors></Toaster>
+        {/* <Provider store={store}> */}
+        <Toaster position="top-center" richColors></Toaster>
 
-          {children}
-        </Provider>
+        {children}
+        {/* </Provider> */}
       </body>
     </html>
   );
